@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
 
+import HomeHeader from "@/components/shared/HomeHeader";
+import HomeFooter from "@/components/shared/HomeFooter";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -27,7 +30,20 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-				{children}
+				<div className="relative min-h-screen overflow-hidden">
+					<img
+						src="/beescover_home_bg.png"
+						alt="BeesCover Background"
+						className="fixed top-0 left-0 w-screen h-screen object-cover z-0"
+					/>
+					<div className="relative z-20 flex flex-col min-h-screen">
+						<HomeHeader />
+						<main className="flex-grow p-5">
+							{children}
+						</main>
+						<HomeFooter />
+					</div>
+				</div>
       </body>
     </html>
   );
