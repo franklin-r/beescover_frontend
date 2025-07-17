@@ -41,7 +41,6 @@ yarn-error.log*
 next-env.d.ts
 
 # Unecessary
-app/favicon.ico
 public/file.svg
 public/globe.svg
 public/next.svg
