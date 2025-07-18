@@ -1,8 +1,14 @@
+import InsureePositionCard from "@/components/shared/InsureePositionCard";
 import InsurerDashboard from "@/components/shared/InsurerDashboard";
 
 const page = () => {
 	return (
-		<InsurerDashboard />
+		<>
+			<div className="flex justify-between">
+				<InsurerDashboard />
+				<InsureePositionCard />
+			</div>
+		</>
 	);
 }
 
