@@ -1,8 +1,8 @@
-import InsurerPositionCard from "@/components/shared/InsurerPositionCard";
+import InsurerDashboard from "@/components/shared/InsurerDashboard";
 
 const page = () => {
 	return (
-		<InsurerPositionCard />
+		<InsurerDashboard />
 	);
 }
 
