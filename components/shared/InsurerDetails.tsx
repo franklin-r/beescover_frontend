@@ -7,7 +7,11 @@ import {
 } from "@/components/ui/card";
 import Link from "next/link";
 
-const InsurerDetails = () => {
+import { poolIdToPoolInfo, PoolInfo } from "@/constants";
+
+const InsurerDetails = ({ poolId }: { poolId: number }) => {
+	const poolInfo = poolIdToPoolInfo.get(poolId) as PoolInfo;
+
 	return (
 		<Card className="w-full max-w-sm">
 			<CardHeader>
@@ -26,7 +30,7 @@ const InsurerDetails = () => {
 					the implications before committing your funds.</p>
 			</CardContent>
 			<CardFooter className="justify-center">
-				<Link href="">Refer to the full cover policy</Link>
+				<Link href={poolInfo.policy} className="hover:underline">Refer to the full cover policy</Link>
 			</CardFooter>
 		</Card>
 	);
