@@ -12,7 +12,7 @@ const page = () => {
 	return (
 		<>
 			<div className="flex gap-15 justify-center">
-				<InsureeDetails />
+				<InsureeDetails poolId={Number(poolId)} />
 				<CoverSubscriptionCard poolId={Number(poolId)} />
 			</div>
 		</>
