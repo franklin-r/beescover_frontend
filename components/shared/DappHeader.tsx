@@ -27,7 +27,7 @@ const DappHeader = () => {
 					<Link href="">Docs</Link>
 				</Button>
 				<Button className="flex-1 bg-black text-yellow-300 text-lg px-3 py-3">
-					<Link href="">DAO</Link>
+					<Link href="https://www.tally.xyz/gov/beescover-dao">DAO</Link>
 				</Button>
 			</div>
 			<ConnectButton />
