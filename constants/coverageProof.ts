@@ -1,6 +1,6 @@
 export const coverageProofAddress = "0x36c90dc3E8188d1437028c26ab2aB62eF0d2B62c";
 export const coverageProofAdmin 	= "0x5941fd401ec7580c77ac31E45c9f59436a2f8C1b";
-export const coverageProofAbi			= [
+export const coverageProofAbi = [
 	{
 		"inputs": [],
 		"stateMutability": "nonpayable",

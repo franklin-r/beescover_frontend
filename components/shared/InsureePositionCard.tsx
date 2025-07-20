@@ -8,8 +8,14 @@ import {
 
 import Link from "next/link";
 import { Button } from "../ui/button";
+import { poolIdToPoolInfo, PoolInfo } from "@/constants";
 
-const InsureePositionCard = () => {
+const InsureePositionCard = ({ tokenId, coverageInfo }: { tokenId: string | unknown, coverageInfo: [bigint, bigint, bigint, bigint] }) => {
+	const poolInfo = poolIdToPoolInfo.get(Number(coverageInfo?.[3])) as PoolInfo;
+
+	console.log(`poolInfo: ${poolInfo}`);
+	console.log(`poolId: ${coverageInfo?.[3]}`);
+
 	return (
 		<Card className="w-full shadow-md hover:shadow-xl transition-shadow duration-100">
 			<CardHeader>
