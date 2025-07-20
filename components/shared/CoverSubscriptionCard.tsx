@@ -13,6 +13,8 @@ import { Slider } from "../ui/slider";
 import { toast } from "sonner";
 import { Skeleton } from "../ui/skeleton";
 
+import { useSearchParams } from "next/navigation";
+
 import { useEffect, useState } from "react";
 
 import { useAccount, useReadContract, useWaitForTransactionReceipt, useWriteContract } from "wagmi";
@@ -21,8 +23,10 @@ import { BaseError, parseUnits } from "viem";
 
 import { poolIdToPoolInfo, PoolInfo } from "@/constants";
 
-const CoverSubscriptionCard = ({ poolId }: { poolId: number }) => {
-	const poolInfo = poolIdToPoolInfo.get(poolId) as PoolInfo;
+const CoverSubscriptionCard = () => {
+	const searchParams = useSearchParams();
+	const poolId = searchParams.get("poolId");
+	const poolInfo = poolIdToPoolInfo.get(Number(poolId)) as PoolInfo;
 	const [amount, setAmount] = useState<string>("");
 	const [inputError, setInputError] = useState<string | null>(null);
 	const [duration, setDuration] = useState<number>(1);

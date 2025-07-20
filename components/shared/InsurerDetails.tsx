@@ -1,3 +1,5 @@
+"use client";
+
 import {
 	Card,
 	CardContent,
@@ -7,10 +9,14 @@ import {
 } from "@/components/ui/card";
 import Link from "next/link";
 
+import { useSearchParams } from "next/navigation";
+
 import { poolIdToPoolInfo, PoolInfo } from "@/constants";
 
-const InsurerDetails = ({ poolId }: { poolId: number }) => {
-	const poolInfo = poolIdToPoolInfo.get(poolId) as PoolInfo;
+const InsurerDetails = () => {
+	const searchParams = useSearchParams();
+	const poolId = searchParams.get("poolId");
+	const poolInfo = poolIdToPoolInfo.get(Number(poolId)) as PoolInfo;
 
 	return (
 		<Card className="w-full max-w-sm">

@@ -14,13 +14,17 @@ import { toast } from "sonner";
 
 import { useEffect, useState } from "react";
 
+import { useSearchParams } from "next/navigation";
+
 import { BaseError, useAccount, useReadContracts, useWaitForTransactionReceipt, useWriteContract } from "wagmi";
 
 import { poolIdToPoolInfo, PoolInfo } from "@/constants";
 import { parseUnits } from "viem";
 
-const LiquidityProvidingCard = ({ poolId }: { poolId: number }) => {
-	const poolInfo = poolIdToPoolInfo.get(poolId) as PoolInfo;
+const LiquidityProvidingCard = () => {
+	const searchParams = useSearchParams();
+	const poolId = searchParams.get("poolId");
+	const poolInfo = poolIdToPoolInfo.get(Number(poolId)) as PoolInfo;
 	const [amount, setAmount] = useState<string>("");
 	const [inputError, setInputError] = useState<string | null>(null);
 	const [approved, setApproved] = useState<boolean>(false);
