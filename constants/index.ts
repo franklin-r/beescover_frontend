@@ -3,6 +3,7 @@ import { usdcAbi, usdcAddress } from "./usdc";
 import { usdcInsurancePoolAbi, usdcInsurancePoolAddress, usdcInsurancePoolAdmin } from "./usdcInsurancePool";
 import { usdtAbi, usdtAddress } from "./usdt";
 import { wbtcAbi, wbtcAddress } from "./wbtc";
+import { wbtcInsurancePoolAbi, wbtcInsurancePoolAddress, wbtcInsurancePoolAdmin } from "./wbtcInsurancePool";
 
 export type PoolInfo = {
 	name: string;
@@ -29,9 +30,9 @@ const usdcPool: PoolInfo = {
 }
 const wbtcPool: PoolInfo = {
 	name: "WBTC Depeg",
-	address: usdcInsurancePoolAddress,
-	admin: usdcInsurancePoolAdmin,
-	abi: usdcInsurancePoolAbi,
+	address: wbtcInsurancePoolAddress,
+	admin: wbtcInsurancePoolAdmin,
+	abi: wbtcInsurancePoolAbi,
 	assetAddress: wbtcAddress,
 	assetSymbol: "WBTC",
 	assetDecimals: 8,
