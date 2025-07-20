@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
 
+import { Toaster } from "@/components/ui/sonner";
+
 import RainbowKitAndWagmiProvider from "@/components/shared/RainbowKitAndWagmiProvider";
 import DappHeader from "@/components/shared/DappHeader";
 import DappFooter from "@/components/shared/DappFooter";
@@ -38,6 +40,7 @@ export default function RootLayout({
 					</main>
 					<DappFooter />
 				</RainbowKitAndWagmiProvider>
+				<Toaster richColors position="top-center" expand={true}/>
 			</body>
 		</html>
 	);
