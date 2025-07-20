@@ -89,7 +89,7 @@ const InsurerPositionCard = ({ poolId }: { poolId: number }) => {
 					<Link href={`/insurer?poolId=${poolId}`}>View Pool</Link>
         </Button>
         <Button className="flex-1 bg-black">
-          <Link href="">Withdraw</Link>
+          <Link href={`/withdraw?poolId=${poolId}`}>Withdraw</Link>
         </Button>
 			</CardFooter>
     </Card>
