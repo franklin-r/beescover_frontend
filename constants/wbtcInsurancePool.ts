@@ -1,4 +1,4 @@
-export const wbtcInsurancePoolAddress = "0x1315401F9D24e1B4B8772EbB6937e7eaDaA6BE38";
+export const wbtcInsurancePoolAddress = "0x7A9CDF178DB26637C4A4e41f1563e1e2c3B19ABd";
 export const wbtcInsurancePoolAdmin 	= "0x5941fd401ec7580c77ac31E45c9f59436a2f8C1b";
 export const wbtcInsurancePoolAbi			= [
 	{
