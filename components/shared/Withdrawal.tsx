@@ -152,7 +152,7 @@ const Withdrawal = () => {
 						)}
 						{readIsSuccess && withdrawalPending && (
 							<div>
-								Your withdrawal request of an amount of {reqAmount} {poolInfo.assetSymbol} 
+								Your withdrawal request of an amount of {Number(reqAmount) / (10**poolInfo.assetDecimals)} {poolInfo.assetSymbol} 
 								will be able to be processed on {new Date(Number(reqTimestamp) * 1000).toString()}
 							</div>
 						)}
