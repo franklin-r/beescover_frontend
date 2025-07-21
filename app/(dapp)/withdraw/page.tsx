@@ -1,12 +1,16 @@
+import { Suspense } from "react";
+
 import Withdrawal from "@/components/shared/Withdrawal";
 
 const page = () => {
 
 	return (
 		<>
-			<div className="flex gap-15 justify-center">
-				<Withdrawal />
-			</div>
+			<Suspense>
+				<div className="flex gap-15 justify-center">
+					<Withdrawal />
+				</div>
+			</Suspense>
 		</>
 	);
 }
