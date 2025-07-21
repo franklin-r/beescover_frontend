@@ -20,7 +20,7 @@ const HomeHeader = () => {
 					<Link href="">Docs</Link>
 				</Button>
 				<Button className="bg-black text-white text-lg px-6 py-3">
-					<Link href="">DAO</Link>
+					<Link href="https://www.tally.xyz/gov/beescover-dao">DAO</Link>
 				</Button>
 			</div>
 			<div>
