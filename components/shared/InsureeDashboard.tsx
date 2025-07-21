@@ -1,6 +1,6 @@
 "use client";
 
-import { useAccount, useReadContract, useReadContracts } from "wagmi";
+import { useAccount, useReadContract } from "wagmi";
 import { coverageProofAbi, coverageProofAddress } from "@/constants/coverageProof";
 import InsureePositionCard from "./InsureePositionCard";
 import { Skeleton } from "../ui/skeleton";
@@ -8,7 +8,6 @@ import { Skeleton } from "../ui/skeleton";
 const InsureeDashboard = () => {
   const { address, isConnected } = useAccount();
 
-  // Étape 1 : balanceOf
   const {
     data: nftBalanceRaw,
     isLoading: balanceLoading,
@@ -26,7 +25,6 @@ const InsureeDashboard = () => {
 
   const nftBalance = Number(nftBalanceRaw || 0);
 
-  // Étape 2 : tokenOfOwnerByIndex (multi-call)
   const {
     data: tokenId,
     isLoading: tokenIdLoading,
@@ -50,14 +48,14 @@ const InsureeDashboard = () => {
   } = useReadContract({
 		address: coverageProofAddress,
 		abi: coverageProofAbi,
-		functionName: "getCoverageInfos",
+		functionName: "coverageInfos",
 		args: [tokenId],
     query: {
       enabled: tokenIdSuccess
     },
   });
 
-	console.log(`coverageInfos: ${coverageInfos}`);
+	const arrayInfo = coverageInfos as any[];
 
   return (
     <div className="space-y-6 w-full">
@@ -71,10 +69,10 @@ const InsureeDashboard = () => {
         <div className="text-red-500">Something went wrong loading your positions.</div>
       )}
 
-      {infosSuccess && (
+      {infosSuccess && !!coverageInfos && (
 				<InsureePositionCard
 					tokenId={tokenId?.toString()}
-					coverageInfo={coverageInfos as [bigint, bigint, bigint, bigint]}
+					coverageInfo={arrayInfo}
 				/>
 			)}
     </div>
